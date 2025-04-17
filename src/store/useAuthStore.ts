@@ -36,7 +36,7 @@ export const useAuthStore=create<authTypes>((set,get)=>({
       // Set the authUser first
       set({authUser:res.data})
       
-      //Then immediately connect socket if we have valid user data
+      // Then immediately connect socket if we have valid user data
       if (res.data && res.data._id) {
         // We call connectSocket directly - set() is synchronous in Zustand
         get().connectSocket();
