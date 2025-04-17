@@ -33,7 +33,7 @@ export const useAuthStore=create<authTypes>((set,get)=>({
   checkAuth:async()=>{
     try {
       const res=await axiosInstance.get("/auth/check")
-      // Set the authUser first
+      //Set the authUser first
       set({authUser:res.data})
       
       // Then immediately connect socket if we have valid user data
